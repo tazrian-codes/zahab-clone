@@ -1,0 +1,17 @@
+.footer{
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-top-one{
+  width: 20vw;
+}
