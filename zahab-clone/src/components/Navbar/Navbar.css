@@ -1,0 +1,82 @@
+.navbar{
+  padding: 20px 100px;
+}
+
+.navbar-body{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo-div img{
+  width: 180px;
+}
+
+.navbar .search-div{
+  display: flex;
+  align-items: center;
+}
+
+.navbar .search-div .search-icon{
+  font-size: 20px;
+}
+
+.navbar .search-div input{
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 15px;
+}
+
+.navbar .others-div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .others-div .nav-icons{
+  font-size: 25px;
+}
+
+.navbar .line{
+  height: 1px;
+  width: 100%;
+  background: silver;
+  margin: 10px auto 20px;
+}
+
+.navbar .nav-opts{
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .nav-opts ul{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-opts ul li{
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.others-div .wishlist, .cart-icon-div{
+  position: relative;
+}
+
+.others-div .wishlist .wishlist-count, .cart .cart-count{
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background-color: #c59b30;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.cart{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

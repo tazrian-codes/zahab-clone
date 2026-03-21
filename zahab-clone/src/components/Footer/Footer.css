@@ -4,14 +4,96 @@
   color: white;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  padding: 40px 100px 20px;
+  color: silver;
+}
+
+.footer a, h4{
+  color: white;
+}
+
+.footer h4{
+  font-weight: 500;
+}
+
+.footer .footer-email{
+  display: flex;
+  gap: 5px;
 }
 
 .footer-top{
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
+  gap: 80px;
 }
 
 .footer-top-one{
-  width: 20vw;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-top-one .number{
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+}
+
+.footer-top-two,
+.footer-top-three,
+.footer-top-four,
+.footer-top-five{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-top-two p,
+.footer-top-three p,
+.footer-top-four p,
+.footer-top-five p{
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.footer-top-two p:hover,
+.footer-top-three p:hover,
+.footer-top-four p:hover,
+.footer-top-five p:hover{
+  color: white;
+}
+
+.footer .line{
+  background-color: silver;
+  width: 100%;
+  height: 1px;
+  margin-bottom: 10px;
+}
+
+.footer-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-bottom-left span{
+  color: white;
+  font-weight: 500;
+}
+
+.footer-bottom-right{
+  display: flex;
+  gap: 10px;
+}
+
+.footer-bottom-right .links{
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.footer-bottom-right .links:hover{
+  color: white;
 }

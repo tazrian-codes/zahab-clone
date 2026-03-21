@@ -10,10 +10,10 @@ const Footer = () => {
         <div className="footer-top-one">
           <p>Shop no 7, Block C, Level - 1, Bashundhara City Shopping Complex Dhaka, Bangladesh</p>
           <div className="footer-email">
-            <span>Email:</span><a href="">contact@zahabperfumes.com</a>
+            <span>Email:</span><a href="mailto:contact@zahabperfumes.com">contact@zahabperfumes.com</a>
           </div>
           <p>Call Us 11 AM - 7 PM</p>
-          <p>09617-642090</p>
+          <p className='number'>09617-642090</p>
         </div>
         <div className="footer-top-two">
           <h4>ACCOUNT</h4>
@@ -42,16 +42,17 @@ const Footer = () => {
           <p>Traditional Type</p>
         </div>
       </div>
+      <div className="line"></div>
       <div className="footer-bottom">
         <div className="footer-bottom-left">
-          Copyright 2025 Zahab. All Rights Reserved.
+          Copyright 2025 <span>Zahab</span>. All Rights Reserved.
         </div>
         <div className="footer-bottom-right">
-          <FontAwesomeIcon icon={faFacebook} />
-          <FontAwesomeIcon icon={faXTwitter} />
-          <FontAwesomeIcon icon={faYoutube} />
-          <FontAwesomeIcon icon={faPinterest} />
-          <FontAwesomeIcon icon={faGooglePlus} />
+          <FontAwesomeIcon className='links' icon={faFacebook} />
+          <FontAwesomeIcon className='links' icon={faXTwitter} />
+          <FontAwesomeIcon className='links' icon={faYoutube} />
+          <FontAwesomeIcon className='links' icon={faPinterest} />
+          <FontAwesomeIcon className='links' icon={faGooglePlus} />
         </div>
       </div>
     </div>

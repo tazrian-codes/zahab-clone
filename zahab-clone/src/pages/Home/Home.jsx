@@ -6,10 +6,11 @@ import SweetType from '../../components/SweetType/SweetType'
 import TraditionalCollection from '../../components/TraditionalCollection/TraditionalCollection'
 import Info from '../../components/Info/Info'
 import Footer from '../../components/Footer/Footer'
+import './Home.css'
 
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
       <Navbar />
       <Banner />
       <PopularItems />
