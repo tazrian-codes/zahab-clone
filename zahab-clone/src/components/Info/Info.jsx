@@ -6,6 +6,7 @@ import './Info.css'
 const Info = () => {
   return (
     <div className='info'>
+      <div className="first-line-sm-screen">
       <div className="delivery">
         <FontAwesomeIcon icon={faTruckFast} className='delivery-truck' />
         <div className="delivery-txt">
@@ -21,7 +22,8 @@ const Info = () => {
           <p>When ordering from 2000 TK</p>
         </div>
       </div>
-
+    </div>
+    <div className='second-line-sm-screen'>
       <div className="gift">
         <FontAwesomeIcon icon={faGift} className='gift-box' />
         <div className="gift-txt">
@@ -36,6 +38,7 @@ const Info = () => {
           <h4>8 Hours Support</h4>
           <p>11 AM - 7 PM</p>
         </div>
+      </div>
       </div>
     </div>
   )

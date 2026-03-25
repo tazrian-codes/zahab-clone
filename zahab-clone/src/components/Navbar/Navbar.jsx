@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -46,13 +47,13 @@ const Navbar = () => {
         <div className="line"></div>
         <div className="nav-bottom">
           <div className="nav-opts">
-            <ul>
-              <li>Home</li>
-              <li>Shop</li>
-              <li>About Us</li>
-              <li>Contact Us</li>
-              <li>Blog</li>
-            </ul>
+            <nav className='opts'>
+              <NavLink className='list-opts' to='/'>Home</NavLink>
+              <NavLink className='list-opts' to='/shop'>Shop</NavLink>
+              <NavLink className='list-opts' to='/about'>About Us</NavLink>
+              <NavLink className='list-opts' to='/contact'>Contact Us</NavLink>
+              <NavLink className='list-opts' to='/blog'>Blog</NavLink>
+            </nav>
           </div>
         </div>
       </div>

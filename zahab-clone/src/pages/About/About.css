@@ -1,0 +1,161 @@
+.about{
+  color: rgb(84, 84, 84);
+}
+
+.about-top{
+  display: flex;
+  padding: 170px 100px 20px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  background: rgb(238, 238, 238);
+  color: black;
+}
+
+.about-top-left{
+  display: flex;
+  gap: 3px;
+}
+
+.div-1{
+  display: flex;
+  gap: 3px;
+}
+
+.div-1 .home-btn{
+  text-decoration: none;
+  color: #c59b30;
+}
+
+.home-btn-two{
+  text-decoration: none;
+  color: black;
+}
+
+.about-top-right{
+  transition: color 0.3s;
+}
+
+.about-top-right:hover{
+  color: #c59b30;
+}
+
+.about-body, .shop-bottom{
+  padding: 0 100px;
+}
+
+.extra-black{
+  font-weight: bold;
+}
+
+.about-body{
+  margin: 0 auto 20px;
+}
+
+.about-body .list ul{
+  list-style: none;
+}
+
+.about-body h4{
+  color: black;
+  font-weight: 700;
+  font-size: 25px;
+  margin: 35px 0 5px;
+}
+
+.about-bottom{
+  margin: 40px 0;
+}
+
+.about-bottom-main{
+  display: flex;
+  gap: 25px;
+}
+
+.about-bottom-main .icon{
+  color: black;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.about-bottom-main h5{
+  color: black;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.about .last-line{
+  height: 0.5px;
+  width: 100%;
+  background: rgb(213, 213, 213);
+  margin-top: 25px;
+}
+
+.about .about-nav{
+  display: block;
+}
+
+.about-heading{
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  width: 100%;
+  color: black;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  background-color: white;
+}
+
+.about-heading .about-heading-center{
+  font-size: 18px;
+}
+
+.about-heading .about-heading-left, .about-heading .about-heading-right{
+  font-size: 23px;
+}
+
+.about-heading .about-heading-right{
+  position: relative;
+}
+
+.about-heading-right .cart-circle{
+  position: absolute;
+  background: #c59b30;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  right: 0;
+  top: 3px;
+}
+
+@media (max-width: 780px) {
+  .about-body, .about-bottom{
+    padding: 40px 30px;
+  }
+
+  .about-bottom-main{
+    flex-direction: column;
+  }
+
+  .about-bottom-main .shipping, .about-bottom-main .secure-payments, .about-bottom-main .support-customer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-top{
+    padding: 80px 10px 20px;
+  }
+
+  .about .about-nav{
+    display: none;
+  }
+
+  .about-heading{
+    display: flex;
+  }
+}

@@ -1,5 +1,5 @@
 .banner{
-  padding: 50px 100px;
+  padding: 170px 100px;
   background-color: #f9f9f9;
 }
 
@@ -22,4 +22,14 @@
   width: 50%;
   height: 50%;
   overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+
+  .banner{
+    padding: 50px 20px;
+  }
+  .big-banner{
+    margin: 70px auto 10px;
+  }
 }
