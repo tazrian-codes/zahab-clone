@@ -8,6 +8,8 @@ import {
   faShoppingBag,
   faHamburger,
   faBars,
+  faHome,
+  faShop,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
 
@@ -48,11 +50,11 @@ const Navbar = () => {
         <div className="nav-bottom">
           <div className="nav-opts">
             <nav className='opts'>
-              <NavLink className='list-opts' to='/'>Home</NavLink>
-              <NavLink className='list-opts' to='/shop'>Shop</NavLink>
-              <NavLink className='list-opts' to='/about'>About Us</NavLink>
-              <NavLink className='list-opts' to='/contact'>Contact Us</NavLink>
-              <NavLink className='list-opts' to='/blog'>Blog</NavLink>
+              <NavLink className={({isActive}) => isActive ? 'list-opts btn-active' : 'list-opts-disabled'} to='/'>Home</NavLink>
+              <NavLink className={({isActive}) => isActive ? 'list-opts btn-active' : 'list-opts-disabled'} to='/shop'>Shop</NavLink>
+              <NavLink className={({isActive}) => isActive ? 'list-opts btn-active' : 'list-opts-disabled'} to='/about'>About Us</NavLink>
+              <NavLink className={({isActive}) => isActive ? 'list-opts btn-active' : 'list-opts-disabled'} to='/contact'>Contact Us</NavLink>
+              <NavLink className={({isActive}) => isActive ? 'list-opts btn-active' : 'list-opts-disabled'} to='/blog'>Blog</NavLink>
             </nav>
           </div>
         </div>
@@ -89,6 +91,27 @@ const Navbar = () => {
               <li>About Us</li>
               <li>Contact Us</li>
             </ul>
+          </div>
+        </div>
+        <div className="bottom-nav">
+          <div className="bottom-home bottom-div">
+            <FontAwesomeIcon icon={faHome} className="bottom-nav-icon" />
+            <span className="bottom-nav-text">Home</span> 
+          </div>
+
+          <div className="bottom-shop bottom-div">
+            <FontAwesomeIcon icon={faShop} className="bottom-nav-icon" />
+            <span className="bottom-nav-text">Shop</span> 
+          </div>
+
+          <div className="bottom-cart bottom-div">
+            <FontAwesomeIcon icon={faShoppingBag} className="bottom-nav-icon" />
+            <span className="bottom-nav-text">Cart</span> 
+          </div>
+
+          <div className="bottom-account bottom-div">
+            <FontAwesomeIcon icon={faUser} className="bottom-nav-icon" />
+            <span className="bottom-nav-text">Account</span> 
           </div>
         </div>
     </div>

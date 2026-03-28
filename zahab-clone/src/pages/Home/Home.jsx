@@ -10,8 +10,8 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <div className='home'>
-      <Navbar />
+    <div className='home-page'>
+      <Navbar className='home-navbar' />
       <Banner />
       <PopularItems />
       <SweetType />

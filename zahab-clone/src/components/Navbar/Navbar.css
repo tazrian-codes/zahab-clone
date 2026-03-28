@@ -84,11 +84,14 @@
   text-decoration: none;
   font-size: 17px;
   font-weight: 400;
-  color: black;
   position: relative;
   padding-bottom: 20px;
   cursor: pointer;
   transition: 0.3s all;
+}
+
+.navbar .nav-opts .opts .list-opts:hover{
+  color: #c59b30;
 }
 
 .navbar .nav-opts .opts .list-opts::after{
@@ -104,6 +107,17 @@
 
 .navbar .nav-opts .opts .list-opts:hover::after{
   visibility: visible;
+}
+
+.navbar .nav-opts .opts .list-opts-disabled{
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 400;
+  color: black;
+  position: relative;
+  padding-bottom: 20px;
+  cursor: pointer;
+  transition: 0.3s all;
 }
 
 .others-div .wishlist, .cart-icon-div{
@@ -182,6 +196,7 @@
     background-color: white;
     position: fixed;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
   }
 
   .nav-top-sm-screen{
@@ -215,6 +230,35 @@
     bottom: 22px;
   }
 
+  .bottom-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 15px;
+    background: white;
+    padding: 12px;
+    z-index: 9999;
+  }
+
+  .bottom-nav .bottom-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(157, 154, 154);
+  }
+
+  .bottom-nav-icon{
+    font-size: 1.2rem;
+  }
+
+  .nav-opts .opts .btn-active{
+    border-bottom: 2px solid #c59b30;
+    color: #c59b30;
+  }
+
 @media (max-width: 1200px) {
 
   .navbar-body{
@@ -233,5 +277,9 @@
 @media (max-width: 735px) {
   .nav-opts-sm-screen{
     width: 60%;
+  }
+
+  .bottom-nav{
+    display: grid;
   }
 }

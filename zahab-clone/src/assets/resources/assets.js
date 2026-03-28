@@ -5,43 +5,255 @@ import pc from './p4.webp'
 import co from './p5.webp'
 import cm from './p6.webp'
 import rv from './p7.webp'
+import ms from './p8.webp'
+import sweer from './sweet.webp'
+import traditional from './traditional.webp'
 
-const product_list = [
+export const product_list = [
   {
+    id: 9,
     name: 'Vampire Blood',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
     image: vb,
-    price: '500 TK'
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
   },
   {
+    id: 10,
     name: 'Hawas Fire',
+    headline: 'Hawas Fire-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
     image: hf,
-    price: '540 TK'
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
   },
   {
+    id: 11,
     name: 'Bin Sheikh',
+    headline: 'Bin Sheikh-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
     image: bs,
-    price: '440 TK'
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
   },
   {
+    id: 12,
     name: 'Prestige Combo',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
     image: pc,
-    price: '500 TK'
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
   },
   {
-    name: 'Comfort Oud',
-    image: co,
-    price: '450 TK'
-  },
-  {
+    id: 14,
     name: 'Cherry Musk',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
     image: cm,
-    price: '600 TK'
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Traditional'
   },
   {
-    name: 'Red Velvet',
+    id: 15,
+    name: 'Red Violette',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
     image: rv,
-    price: '550 TK'
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Traditional'
   }
 ]
 
-export default product_list;
+export const sweet_type = [
+  { 
+    id: 1,
+    name: 'Vampire Blood',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: vb,
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
+  },
+  {
+    id: 2,
+    name: 'Hawas Fire',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: hf,
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
+  },
+  {
+    id: 3,
+    name: 'Bin Sheikh',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: bs,
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
+  },
+]
+
+export const traditional_type = [
+  {
+    id: 4,
+    name: 'Mukhallat Seufi',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: ms,
+    category: 'Traditional',
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+  },
+  {
+    id: 5,
+    name: 'Red Violette',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: rv,
+    category: 'Traditional',
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+  },
+  {
+    id: 6,
+    name: 'Cherry Musk',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: cm,
+    category: 'Traditional',
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+  },
+  {
+    id: 7,
+    name: 'Bin Sheikh',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: bs,
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
+  },
+  {
+    id: 8,
+    name: 'Hawas Fire',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: hf,
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
+  },
+  { 
+    id: 9,
+    name: 'Vampire Blood',
+    headline: 'Vampire Blood-Long Lasting Fragrance',
+    notes: 'Dark Berry, Sweet Vanilla, Musk',
+    lasting: '8-16 Hours',
+    projection: '1-8 Feet',
+    usage: 'Perfect for office, special occasions, and masjid',
+    image: vb,
+    price_one: '500 TK',
+    price_two: '695 TK',
+    six_ml: '500 TK',
+    twelve_ml: '600 TK',
+    fifteen_ml: '695 TK',
+    category: 'Sweet'
+  },
+]
