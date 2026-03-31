@@ -7,11 +7,13 @@ import TraditionalCollection from '../../components/TraditionalCollection/Tradit
 import Info from '../../components/Info/Info'
 import Footer from '../../components/Footer/Footer'
 import './Home.css'
+import BottomNav from '../../components/BottomNav/BottomNav'
 
 const Home = () => {
   return (
     <div className='home-page'>
       <Navbar className='home-navbar' />
+      <BottomNav />
       <Banner />
       <PopularItems />
       <SweetType />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEye,
@@ -7,10 +7,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import './ProductCard.css'
 import { useNavigate } from 'react-router-dom';
+import { StoreContext } from '../../Context/Context';
 
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onQuickView, subtitle }) => {
   const [activeId, setActiveId] = useState(null);
+  const {addToWishlist, wishlistItems} = useContext(StoreContext)
   const navigate = useNavigate();
   return (
       <div
@@ -25,11 +27,11 @@ const ProductCard = ({ product }) => {
               className={`slide-div ${activeId === product.id ? "show-slide" : "hide-slide"}`}
             >
               <FontAwesomeIcon icon={faShoppingBag} />
-              <span>Select options</span>
+              <span onClick={() => navigate(`/product/${product.id}`)}>Select options</span>
             </div>
-            <FontAwesomeIcon icon={faEye} className={`show-product ${activeId === product.id ? 'show-icon' : 'hide-icon'}`} />
+            <FontAwesomeIcon icon={faEye} className={`show-product ${activeId === product.id ? 'show-icon' : 'hide-icon'}`} onClick={(e) => {e.stopPropagation(); onQuickView(product)}} />
           </div>
-          <div className="opt-div-sm-screen">
+          <div className="opt-div-sm-screen" onClick={() => navigate(`/product/${product.id}`)}>
             <span>Select Options</span>
           </div>
           <div className="text">
@@ -39,9 +41,14 @@ const ProductCard = ({ product }) => {
               <span className="price-dash">-</span>
               <span className="price">{product.price_two}</span>
             </div>
-            <div className="wishlist">
-              <FontAwesomeIcon icon={faHeart} className="wishlist-icon" />
-              <span className="wishlist-text">Add to Wishlist</span>
+            <div className="wishlist" onClick={(e) => {e.stopPropagation(); addToWishlist(product.id)}}>
+              <div>
+                <FontAwesomeIcon icon={faHeart} className="wishlist-icon" />
+              <span className="wishlist-text">{wishlistItems[product.id] ? 'Product Added!' : 'Add to Wishlist'}</span>
+              </div>
+              <div className='browse-div'>
+                <span className={`browse ${wishlistItems[product.id] ? 'show-browse' : 'hide-browse'}`} onClick={() => navigate('/wishlist')}>Browse Wishlist</span>
+              </div>
             </div>
           </div>
         </div>

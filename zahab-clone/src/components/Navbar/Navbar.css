@@ -124,7 +124,7 @@
   position: relative;
 }
 
-.others-div .wishlist .wishlist-count, .cart .cart-count{
+.others-div .wishlist .wishlist-count, .cart .cart-icon-div .cart-count{
   height: 17px;
   width: 17px;
   border-radius: 50%;
@@ -132,6 +132,13 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
 }
 
 .cart{
@@ -228,30 +235,6 @@
     position: absolute;
     left: 40px;
     bottom: 22px;
-  }
-
-  .bottom-nav{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: none;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-    gap: 15px;
-    background: white;
-    padding: 12px;
-    z-index: 9999;
-  }
-
-  .bottom-nav .bottom-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(157, 154, 154);
-  }
-
-  .bottom-nav-icon{
-    font-size: 1.2rem;
   }
 
   .nav-opts .opts .btn-active{

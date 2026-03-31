@@ -1,0 +1,15 @@
+.wishlist-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  min-height: 100vh;
+}
+
+.wishlist-nav{
+  position: fixed;
+}
+
+.wishlist-contents{
+  flex: 1;
+}

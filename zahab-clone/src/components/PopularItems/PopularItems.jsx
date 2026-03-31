@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { product_list } from "../../assets/resources/assets";
 import ProductCard from "../ProductCard/ProductCard";
 import './PopularItems.css'
+import ProductGlimpse from "../ProductGlimpse/ProductGlimpse";
 
 const PopularItems = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
   return (
     <div className="product-category">
       <div className="category-top">
@@ -13,9 +15,15 @@ const PopularItems = () => {
       <div className="popular-items-product-category-body">
         <div className="product-card">
           {product_list.slice(0, 6).map((product, index) => {
-            return <ProductCard key={product.id} product={product} />;
+            return <ProductCard key={product.id} product={product} onQuickView={setSelectedProduct} />;
           })}
         </div>
+        {selectedProduct && (
+          <div className="product-glimpse-overlay" onClick={() => setSelectedProduct(null)}>
+            <ProductGlimpse className="product-glimpse-component" product={selectedProduct} />
+          </div>
+        )}
+
       </div>
     </div>
   );

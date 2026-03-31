@@ -1,0 +1,36 @@
+.bottom-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 15px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+
+  .bottom-nav .bottom-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(157, 154, 154);
+    padding: 10px;
+  }
+
+  .bottom-div.nav-border{
+    border-top: 5px solid #c5b930;
+    width: 100%; 
+  }
+
+  .bottom-nav-icon{
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 735px) {
+
+  .bottom-nav{
+    display: grid;
+  }
+}

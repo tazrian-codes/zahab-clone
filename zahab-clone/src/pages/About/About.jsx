@@ -1,17 +1,10 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBoxOpen,
   faShield,
   faHeadset,
-  faAngleLeft,
-  faHome,
-  faShoppingBasket,
-  faShoppingBag
 } from "@fortawesome/free-solid-svg-icons";
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 import './About.css'
 
 const About = () => {
@@ -64,7 +57,6 @@ const About = () => {
         </div>
         <div className="last-line"></div>
       </div>
-      <Footer />
     </div>
     </div>
   )
