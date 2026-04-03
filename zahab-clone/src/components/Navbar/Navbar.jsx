@@ -11,14 +11,19 @@ import {
 import "./Navbar.css";
 import { StoreContext } from "../../Context/Context";
 import CartSlide from "../CartSlide/CartSlide";
+import { product_list } from "../../assets/resources/assets";
+import SearchDropDown from "../SearchDropDown/SearchDropDown";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { cartItems, totalQuantity, totalWishlistItems } =
+  const { totalQuantity, totalWishlistItems, totalPrice } =
     useContext(StoreContext);
   const [cartOpen, setCartOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [search, setSearch] = useState(null);
+  const [suggestions, setSuggestions] = useState([]);
+  const [dropdown, setDropdown] = useState(false);
   useEffect(() => {
   if (cartOpen) {
     document.body.style.overflow = "hidden";
@@ -36,19 +41,26 @@ const Navbar = () => {
       <CartSlide cartOpen={cartOpen} setCartOpen={setCartOpen} />
       <div
         className={`nav-overlay ${searchOpen ? "show-nav-overlay" : ""}`}
-        onClick={() => setSearchOpen(false)}
+        onClick={() => {setSearchOpen(false); setDropdown(false)}}
       ></div>
       <div className="navbar-body">
         <div className="nav-top">
           <div className="logo-div" onClick={() => navigate("/")}>
             <img src="/src/assets/resources/logo.webp" />
           </div>
-          <div className="search-div" onClick={() => setSearchOpen(true)}>
+          <div className="search-div" onClick={() => {setSearchOpen(true); setDropdown(true)}}>
             <FontAwesomeIcon className="search-icon" icon={faSearch} />
-            <input type="text" placeholder="Search..." />
+            <input type="text" placeholder="Search..." value={search} onChange={(e) => {
+              const value = e.target.value;
+              setSearch(value);
+
+              const filtered = product_list.filter((product) => product.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()));
+              setSuggestions(filtered);
+            }} />
+            <SearchDropDown suggestions={suggestions} search={search} dropdown={dropdown} />
           </div>
           <div className="others-div">
-            <FontAwesomeIcon className="nav-icons" icon={faUser} />
+            <FontAwesomeIcon className="nav-icons" onClick={() => navigate('/account')} icon={faUser} />
             <div className="wishlist" onClick={() => navigate('/wishlist')}>
               <FontAwesomeIcon className="nav-icons" icon={faHeart} />
               <div className="wishlist-count">{totalWishlistItems}</div>
@@ -60,7 +72,7 @@ const Navbar = () => {
                   <span>{totalQuantity}</span>
                 </div>
               </div>
-              <div className="cart-amount">20 TK</div>
+              <div className="cart-amount">{totalPrice}৳</div>
             </div>
           </div>
         </div>

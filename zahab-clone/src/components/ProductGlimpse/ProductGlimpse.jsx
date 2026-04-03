@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import './ProductGlimpse.css'
 import { StoreContext } from '../../Context/Context';
 
-export const ProductGlimpse = ({ product }) => {
+export const ProductGlimpse = ({ product, setSelectedProduct }) => {
   const [selectedSize, setSelectedSize] = useState(null);
   const { addToCart, cartItems } = useContext(StoreContext);
   useEffect(() => {
@@ -11,7 +11,7 @@ export const ProductGlimpse = ({ product }) => {
   return (
     <div className="product-glimpse" onClick={(e) => e.stopPropagation()}>
       <div className="product-glimpse-top">
-        <span>close-</span>
+        <span onClick={() => setSelectedProduct(null)}>close-</span>
       </div>
       <div className="product-details-body-glimpse">
         <div className="product-details-img">

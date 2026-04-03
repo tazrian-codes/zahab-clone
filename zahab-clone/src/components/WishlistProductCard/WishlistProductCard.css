@@ -1,7 +1,8 @@
 .wishlist-product{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
   gap: 20px;
-  margin: 170px 100px 30px;
+  padding: 170px 100px 30px;
 }
 
 .wishlist-product-card{
@@ -45,4 +46,28 @@
 .wishlist-product-card .icon{
   font-size: 1.3rem;
   margin: 10px 0;
+}
+
+@media (max-width: 1200px) {
+  .wishlist-product{
+  padding: 80px 20px 30px;
+}
+}
+
+@media (min-width: 551px) and (max-width: 735px) {
+  .wishlist-product{
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .wishlist-product{
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+}
+
+@media (min-width: 736px) and (max-width: 1280px) {
+  .wishlist-product{
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+  }
 }

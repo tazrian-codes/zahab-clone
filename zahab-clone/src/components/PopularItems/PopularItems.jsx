@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { product_list } from "../../assets/resources/assets";
 import ProductCard from "../ProductCard/ProductCard";
 import './PopularItems.css'
 import ProductGlimpse from "../ProductGlimpse/ProductGlimpse";
+import { StoreContext } from "../../Context/Context";
 
 const PopularItems = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const {selectedProduct, setSelectedProduct} = useContext(StoreContext);
   return (
     <div className="product-category">
       <div className="category-top">

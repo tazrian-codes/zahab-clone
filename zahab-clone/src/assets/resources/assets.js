@@ -257,3 +257,18 @@ export const traditional_type = [
     category: 'Sweet'
   },
 ]
+
+export const state_name = [
+  'Dhaka',
+  'Khulna',
+  'Chattogram',
+  'Bogura',
+  'Sylhet',
+  'Barishal',
+  'Gazipur',
+  'Lalmonir Hat',
+  'Tangail',
+  'Rajshahi',
+  'Rangpur',
+  'Mymensingh'
+]

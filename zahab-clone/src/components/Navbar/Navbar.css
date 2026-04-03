@@ -1,22 +1,23 @@
-.navbar{
+.navbar {
   position: relative;
 }
 
-.nav-overlay{
+.nav-overlay {
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
   visibility: hidden;
-  transition: visibility 0.3s ease-in-out;
+  transition: visibility 0.3s all;
+  z-index: 999;
 }
 
-.show-nav-overlay{
+.show-nav-overlay {
   visibility: visible;
 }
 
-.navbar-body{
+.navbar-body {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -26,61 +27,62 @@
   z-index: 9999;
 }
 
-.nav-top{
+.nav-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar .logo-div img{
+.navbar .logo-div img {
   width: 180px;
 }
 
-.navbar .search-div{
+.navbar .search-div {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
-.navbar .search-div .search-icon{
+.navbar .search-div .search-icon {
   font-size: 20px;
 }
 
-.navbar .search-div input{
+.navbar .search-div input {
   border: none;
   outline: none;
   padding: 10px 15px;
   font-size: 15px;
 }
 
-.navbar .others-div{
+.navbar .others-div {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.navbar .others-div .nav-icons{
+.navbar .others-div .nav-icons {
   font-size: 25px;
 }
 
-.navbar .line{
+.navbar .line {
   height: 1px;
   width: 100%;
   background: silver;
   margin: 10px auto 20px;
 }
 
-.navbar .nav-opts{
+.navbar .nav-opts {
   display: flex;
   justify-content: center;
 }
 
-.navbar .nav-opts .opts{
+.navbar .nav-opts .opts {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.navbar .nav-opts .opts .list-opts{
+.navbar .nav-opts .opts .list-opts {
   text-decoration: none;
   font-size: 17px;
   font-weight: 400;
@@ -90,12 +92,12 @@
   transition: 0.3s all;
 }
 
-.navbar .nav-opts .opts .list-opts:hover{
+.navbar .nav-opts .opts .list-opts:hover {
   color: #c59b30;
 }
 
-.navbar .nav-opts .opts .list-opts::after{
-  content: '';
+.navbar .nav-opts .opts .list-opts::after {
+  content: "";
   width: 100%;
   height: 2px;
   background-color: #c59b30;
@@ -105,11 +107,11 @@
   visibility: hidden;
 }
 
-.navbar .nav-opts .opts .list-opts:hover::after{
+.navbar .nav-opts .opts .list-opts:hover::after {
   visibility: visible;
 }
 
-.navbar .nav-opts .opts .list-opts-disabled{
+.navbar .nav-opts .opts .list-opts-disabled {
   text-decoration: none;
   font-size: 17px;
   font-weight: 400;
@@ -120,11 +122,13 @@
   transition: 0.3s all;
 }
 
-.others-div .wishlist, .cart-icon-div{
+.others-div .wishlist,
+.cart-icon-div {
   position: relative;
 }
 
-.others-div .wishlist .wishlist-count, .cart .cart-icon-div .cart-count{
+.others-div .wishlist .wishlist-count,
+.cart .cart-icon-div .cart-count {
   height: 17px;
   width: 17px;
   border-radius: 50%;
@@ -141,13 +145,21 @@
   color: white;
 }
 
-.cart{
+.navbar-body .nav-top .search-icon,
+.navbar-body .nav-top .nav-icons,
+.navbar-body .nav-top .logo-div,
+.navbar-body .nav-top .others-div .wishlist,
+.navbar-body .nav-top .others-div .cart {
+  cursor: pointer;
+}
+
+.cart {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.nav-overlay-sm-screen{
+.nav-overlay-sm-screen {
   position: absolute;
   height: 100vh;
   width: 100%;
@@ -158,11 +170,11 @@
   z-index: 999;
 }
 
-.show-nav-overlay{
+.show-nav-overlay {
   visibility: visible;
 }
 
-.nav-opts-sm-screen{
+.nav-opts-sm-screen {
   background-color: white;
   height: 100vh;
   width: 40%;
@@ -174,95 +186,96 @@
   position: absolute;
 }
 
-.show-nav-opts{
+.show-nav-opts {
   transform: translateX(0);
 }
 
-.nav-opts-sm-screen ul{
+.nav-opts-sm-screen ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.nav-opts-sm-screen ul li{
+.nav-opts-sm-screen ul li {
   font-weight: 500;
 }
 
-.nav-opts-sm-screen ul .remove{
+.nav-opts-sm-screen ul .remove {
   font-size: 25px;
   margin-bottom: 10px;
   font-weight: 400;
 }
 
-.navbar-body-sm-screen{
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    padding: 10px 30px;
-    background-color: white;
-    position: fixed;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-  }
+.navbar-body-sm-screen {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 30px;
+  background-color: white;
+  position: fixed;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
 
-  .nav-top-sm-screen{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
+.nav-top-sm-screen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
 
-  .nav-top-sm-screen .menu, .nav-top-sm-screen .cart-icon{
-    font-size: 25px;
-  }
+.nav-top-sm-screen .menu,
+.nav-top-sm-screen .cart-icon {
+  font-size: 25px;
+}
 
-  .nav-top-sm-screen .logo-div img{
-    width: 100px;
-  }
+.nav-top-sm-screen .logo-div img {
+  width: 100px;
+}
 
-  .search-div-sm-screen input{
-    width: 100%;
-    padding: 10px 10px 10px 45px;
-    font-size: 17px;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid silver;
-  }
+.search-div-sm-screen input {
+  width: 100%;
+  padding: 10px 10px 10px 45px;
+  font-size: 17px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid silver;
+}
 
-  .search-icon-sm-screen{
-    font-size: 20px;
-    position: absolute;
-    left: 40px;
-    bottom: 22px;
-  }
+.search-icon-sm-screen {
+  font-size: 20px;
+  position: absolute;
+  left: 40px;
+  bottom: 22px;
+}
 
-  .nav-opts .opts .btn-active{
-    border-bottom: 2px solid #c59b30;
-    color: #c59b30;
-  }
+.nav-opts .opts .btn-active {
+  border-bottom: 2px solid #c59b30;
+  color: #c59b30;
+}
 
 @media (max-width: 1200px) {
-
-  .navbar-body{
+  .navbar-body {
     display: none;
   }
 
-  .navbar-body-sm-screen{
+  .navbar-body-sm-screen {
     display: flex;
   }
 
-  .nav-overlay-sm-screen, .nav-opts-sm-screen{
+  .nav-overlay-sm-screen,
+  .nav-opts-sm-screen {
     display: block;
   }
 }
 
 @media (max-width: 735px) {
-  .nav-opts-sm-screen{
+  .nav-opts-sm-screen {
     width: 60%;
   }
 
-  .bottom-nav{
+  .bottom-nav {
     display: grid;
   }
 }

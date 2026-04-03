@@ -56,9 +56,8 @@
   color: #c59b30;
 }
 
-.page-shift .home-btn-two{
-  text-decoration: none;
-  color: black;
+.page-shift .previous-page-btn{
+  cursor: pointer;
 }
 
 .page-shift .top-right{

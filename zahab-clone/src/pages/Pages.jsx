@@ -19,6 +19,7 @@ import Home from "./Home/Home";
 import Shop from "./Shop/Shop";
 import Footer from "../components/Footer/Footer";
 import PageShift from "../components/PageShift/PageShift";
+import Account from "./Account/Account";
 
 const Pages = () => {
   const { pageName } = useParams();
@@ -33,11 +34,15 @@ const Pages = () => {
     <div className="pages">
       <PageShift title={content[pageName]} />
 
+      <div className="pages-body">
       {pageName === "about" ? (
         <About />
       ) : pageName === "blog" ? (
         <Blog />
+      ) : pageName === "account" ? (
+        <Account />
       ) : null}
+      </div>
       <Footer />
     </div>
   );

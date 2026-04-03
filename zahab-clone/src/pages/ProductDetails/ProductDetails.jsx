@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,6 +18,7 @@ import {
 import { StoreContext } from "../../Context/Context";
 
 const ProductDetails = () => {
+  const navigate = useNavigate()
   const [selectedSize, setSelectedSize] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
@@ -152,7 +153,7 @@ const ProductDetails = () => {
             >
               Add to Cart
             </button>
-            <button className="buy-now-btn" disabled={selectedSize === null}>
+            <button className="buy-now-btn" disabled={selectedSize === null} onClick={() => navigate('/checkout')}>
               Buy Now
             </button>
           </div>

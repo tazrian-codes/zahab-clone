@@ -1,3 +1,13 @@
+.pages{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.pages-body{
+  flex: 1;
+}
+
 .pages .heading{
   display: none;
   justify-content: space-between;

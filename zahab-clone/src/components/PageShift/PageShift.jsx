@@ -1,6 +1,6 @@
 import React from 'react'
 import './PageShift.css'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleLeft,
@@ -10,13 +10,14 @@ import {
 import Navbar from '../Navbar/Navbar';
 
 const PageShift = ({title}) => {
+  const navigate = useNavigate();
   return (
     <div className='page-shift'>
       <div className="nav">
         <Navbar />
       </div>
       <div className="heading">
-        <div className="heading-left">
+        <div className="heading-left" onClick={() => navigate('/')}>
           <FontAwesomeIcon icon={faAngleLeft} />
           <FontAwesomeIcon icon={faHome} />
         </div>
@@ -42,9 +43,9 @@ const PageShift = ({title}) => {
         </div>
 
         <div className="top-right">
-          <NavLink to="/home" className="home-btn-two">
+          <span className="previous-page-btn" onClick={() => {window.history.length > 1 ? navigate(-1) : navigate('/')}}>
             Previous Page
-          </NavLink>
+          </span>
         </div>
       </div>
     </div>

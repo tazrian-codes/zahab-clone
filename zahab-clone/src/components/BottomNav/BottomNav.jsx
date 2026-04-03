@@ -25,7 +25,7 @@ const BottomNav = () => {
             <span className="bottom-nav-text">Shop</span> 
           </div>
 
-          <div className={`bottom-cart bottom-div ${activeBtn === '/cart' ? 'nav-border' : ''}`} onClick={() => navigate('/cart')}>
+          <div className={`bottom-cart bottom-div ${activeBtn === '/cart' ? 'nav-border' : ''}`} onClick={() => navigate('/checkout')}>
             <FontAwesomeIcon icon={faShoppingBag} className="bottom-nav-icon" />
             <span className="bottom-nav-text">Cart</span> 
           </div>
