@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { StoreContext } from "../../Context/Context";
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/resources/logo.webp";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Checkout = () => {
       {/* Left section: Billing & Shipping details */}
       <div className="left-div">
         <img
-          src="/src/assets/resources/logo.webp"
+          src={logo}
           onClick={() => navigate("/")}
         />
 

@@ -6,7 +6,7 @@ import co from './p5.webp'
 import cm from './p6.webp'
 import rv from './p7.webp'
 import ms from './p8.webp'
-import sweer from './sweet.webp'
+import sweet from './sweet.webp'
 import traditional from './traditional.webp'
 
 export const product_list = [

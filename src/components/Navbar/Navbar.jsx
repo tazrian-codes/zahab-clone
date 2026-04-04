@@ -13,6 +13,7 @@ import { StoreContext } from "../../Context/Context";
 import CartSlide from "../CartSlide/CartSlide";
 import { product_list } from "../../assets/resources/assets";
 import SearchDropDown from "../SearchDropDown/SearchDropDown";
+import logo from "../../assets/resources/logo.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -63,7 +64,7 @@ const Navbar = () => {
         <div className="nav-top">
           {/* Logo */}
           <div className="logo-div" onClick={() => navigate("/")}>
-            <img src="/src/assets/resources/logo.webp" />
+            <img src={logo} />
           </div>
 
           {/* Search input with live filtering */}

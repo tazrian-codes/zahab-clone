@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { sweet_type } from "../../assets/resources/assets";
 import HomeCategory from "../HomeCategory/HomeCategory";
+import sweet from "../../assets/resources/sweet.webp";
 
 const SweetType = () => {
   return (
@@ -8,7 +9,7 @@ const SweetType = () => {
       <HomeCategory
         title="Sweet Type"
         subtitle="Sweet Collection"
-        imageSrc="/src/assets/resources/sweet.webp"
+        imageSrc={sweet}
         products={sweet_type}
       />
     </div>
