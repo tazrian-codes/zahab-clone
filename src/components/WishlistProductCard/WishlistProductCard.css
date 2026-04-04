@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(6, minmax(150px, 1fr));
   gap: 20px;
-  padding: 170px 100px 30px;
 }
 
 .wishlist-product-card {

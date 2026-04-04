@@ -33,10 +33,7 @@ const Checkout = () => {
     <div className="checkout-page">
       {/* Left section: Billing & Shipping details */}
       <div className="left-div">
-        <img
-          src={logo}
-          onClick={() => navigate("/")}
-        />
+        <img src={logo} onClick={() => navigate("/")} />
 
         {/* Coupon section */}
         <div className="coupon">
