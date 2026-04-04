@@ -254,6 +254,12 @@
   color: #c59b30;
 }
 
+.nav-bottom-mobile .search-div{
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
 @media (max-width: 1200px) {
   .navbar-body {
     display: none;

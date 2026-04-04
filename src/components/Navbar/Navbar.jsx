@@ -207,11 +207,38 @@ const Navbar = () => {
         </div>
 
         <div className="nav-bottom-mobile">
-          <div className="search-div-sm-screen">
-            <input type="text" placeholder="Search..." />
-            <FontAwesomeIcon
-              icon={faSearch}
-              className="search-icon-sm-screen"
+          <div
+            className="search-div"
+            onClick={() => {
+              setSearchOpen(true);
+              setDropdown(true);
+            }}
+          >
+            <FontAwesomeIcon className="search-icon" icon={faSearch} />
+
+            <input
+              type="text"
+              placeholder="Search..."
+              value={search}
+              onChange={(e) => {
+                const value = e.target.value;
+                setSearch(value);
+
+                // Filter products based on search input
+                const filtered = product_list.filter((product) =>
+                  product.name.toLowerCase().includes(value.toLowerCase()),
+                );
+
+                setSuggestions(filtered);
+              }}
+            />
+
+            <SearchDropDown
+              suggestions={suggestions}
+              search={search}
+              dropdown={dropdown}
+              setDropdown={setDropdown}
+              setSearchOpen={setSearchOpen}
             />
           </div>
         </div>
