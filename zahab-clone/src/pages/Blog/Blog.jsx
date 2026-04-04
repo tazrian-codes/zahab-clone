@@ -1,5 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBoxOpen,
@@ -10,21 +10,19 @@ import {
   faShoppingBasket,
   faShoppingBag,
   faAngleRight,
-  faSearch
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import './Blog.css'
+import "./Blog.css";
 
 const Blog = () => {
   return (
-    <div className='blog'>
-      <div className="blog-body-left">
-        
-      </div>
+    <div className="blog">
+      <div className="blog-body-left"></div>
 
       <div className="blog-body-right">
         <div className="search-div border-div">
           <input type="text" placeholder="Search..." />
-          <FontAwesomeIcon icon={faSearch} className = "search-icon" />
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
         </div>
 
         <div className="categories border-div">
@@ -41,7 +39,11 @@ const Blog = () => {
           <h4>Recent Posts</h4>
           <div className="line"></div>
           <div className="recent-posts-body">
-            <span>সম্মানিত গ্রাহক, ২৭শে মার্চ ২০২৫, দুপুর ২টার পরের অর্ডার ৭ই এপ্রিল ২০২৫ এর পরে ডেলিভারি করা হবে। আপনার সহযোগিতার জন্য ধন্যবাদ। ঈদ মোবারক!</span>
+            <span>
+              সম্মানিত গ্রাহক, ২৭শে মার্চ ২০২৫, দুপুর ২টার পরের অর্ডার ৭ই এপ্রিল
+              ২০২৫ এর পরে ডেলিভারি করা হবে। আপনার সহযোগিতার জন্য ধন্যবাদ। ঈদ
+              মোবারক!
+            </span>
             <span>MARCH 27, 2025</span>
           </div>
         </div>
@@ -82,7 +84,7 @@ const Blog = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

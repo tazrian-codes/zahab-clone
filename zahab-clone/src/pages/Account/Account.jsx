@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './Account.css'
+import "./Account.css";
 
 const Account = () => {
   return (

@@ -1,39 +1,37 @@
-.banner{
+.banner {
   padding: 170px 100px;
   background-color: #f9f9f9;
   max-width: 1500px;
   margin: auto;
 }
 
-.big-banner{
+.big-banner {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
   width: 100%;
 }
 
-.big-banner img{
+.big-banner img {
   width: 100%;
   height: auto;
 }
 
-.small-banner{
+.small-banner {
   display: flex;
   gap: 20px;
   width: 100%;
   justify-content: center;
 }
 
-.small-banner img{
+.small-banner img {
   width: 100%;
   height: auto;
   overflow: hidden;
 }
 
 @media (max-width: 1200px) {
-
-  .banner{
+  .banner {
     padding: 50px 20px;
   }
-  
 }

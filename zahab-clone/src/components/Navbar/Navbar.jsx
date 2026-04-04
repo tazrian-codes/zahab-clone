@@ -16,55 +16,105 @@ import SearchDropDown from "../SearchDropDown/SearchDropDown";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  // Global cart & wishlist data
   const { totalQuantity, totalWishlistItems, totalPrice } =
     useContext(StoreContext);
+
+  // UI state controls
   const [cartOpen, setCartOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Search-related state
   const [search, setSearch] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
   const [dropdown, setDropdown] = useState(false);
-  useEffect(() => {
-  if (cartOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto"; 
-  }
 
-  // cleanup (important)
-  return () => {
-    document.body.style.overflow = "auto";
-  };
-}, [cartOpen]);
+  // Prevent background scrolling when cart drawer is open
+  useEffect(() => {
+    if (cartOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [cartOpen]);
+
   return (
     <div className="navbar">
+      {/* Cart slide panel */}
       <CartSlide cartOpen={cartOpen} setCartOpen={setCartOpen} />
+
+      {/* Overlay for search dropdown */}
       <div
         className={`nav-overlay ${searchOpen ? "show-nav-overlay" : ""}`}
-        onClick={() => {setSearchOpen(false); setDropdown(false)}}
+        onClick={() => {
+          setSearchOpen(false);
+          setDropdown(false);
+        }}
       ></div>
+
       <div className="navbar-body">
         <div className="nav-top">
+          {/* Logo */}
           <div className="logo-div" onClick={() => navigate("/")}>
             <img src="/src/assets/resources/logo.webp" />
           </div>
-          <div className="search-div" onClick={() => {setSearchOpen(true); setDropdown(true)}}>
-            <FontAwesomeIcon className="search-icon" icon={faSearch} />
-            <input type="text" placeholder="Search..." value={search} onChange={(e) => {
-              const value = e.target.value;
-              setSearch(value);
 
-              const filtered = product_list.filter((product) => product.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()));
-              setSuggestions(filtered);
-            }} />
-            <SearchDropDown suggestions={suggestions} search={search} dropdown={dropdown} />
+          {/* Search input with live filtering */}
+          <div
+            className="search-div"
+            onClick={() => {
+              setSearchOpen(true);
+              setDropdown(true);
+            }}
+          >
+            <FontAwesomeIcon className="search-icon" icon={faSearch} />
+
+            <input
+              type="text"
+              placeholder="Search..."
+              value={search}
+              onChange={(e) => {
+                const value = e.target.value;
+                setSearch(value);
+
+                // Filter products based on search input
+                const filtered = product_list.filter((product) =>
+                  product.name.toLowerCase().includes(value.toLowerCase()),
+                );
+
+                setSuggestions(filtered);
+              }}
+            />
+
+            <SearchDropDown
+              suggestions={suggestions}
+              search={search}
+              dropdown={dropdown}
+              setDropdown={setDropdown}
+              setSearchOpen={setSearchOpen}
+            />
           </div>
+
+          {/* User, wishlist, and cart section */}
           <div className="others-div">
-            <FontAwesomeIcon className="nav-icons" onClick={() => navigate('/account')} icon={faUser} />
-            <div className="wishlist" onClick={() => navigate('/wishlist')}>
+            <FontAwesomeIcon
+              className="nav-icons"
+              onClick={() => navigate("/account")}
+              icon={faUser}
+            />
+
+            <div className="wishlist" onClick={() => navigate("/wishlist")}>
               <FontAwesomeIcon className="nav-icons" icon={faHeart} />
               <div className="wishlist-count">{totalWishlistItems}</div>
             </div>
+
             <div className="cart" onClick={() => setCartOpen(true)}>
               <div className="cart-icon-div">
                 <FontAwesomeIcon className="nav-icons" icon={faShoppingBag} />
@@ -76,47 +126,54 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
         <div className="line"></div>
+
+        {/* Desktop navigation links */}
         <div className="nav-bottom">
           <div className="nav-opts">
             <nav className="opts">
               <NavLink
+                to="/"
                 className={({ isActive }) =>
                   isActive ? "list-opts btn-active" : "list-opts-disabled"
                 }
-                to="/"
               >
                 Home
               </NavLink>
+
               <NavLink
+                to="/shop"
                 className={({ isActive }) =>
                   isActive ? "list-opts btn-active" : "list-opts-disabled"
                 }
-                to="/shop"
               >
                 Shop
               </NavLink>
+
               <NavLink
+                to="/about"
                 className={({ isActive }) =>
                   isActive ? "list-opts btn-active" : "list-opts-disabled"
                 }
-                to="/about"
               >
                 About Us
               </NavLink>
+
               <NavLink
+                to="/contact"
                 className={({ isActive }) =>
                   isActive ? "list-opts btn-active" : "list-opts-disabled"
                 }
-                to="/contact"
               >
                 Contact Us
               </NavLink>
+
               <NavLink
+                to="/blog"
                 className={({ isActive }) =>
                   isActive ? "list-opts btn-active" : "list-opts-disabled"
                 }
-                to="/blog"
               >
                 Blog
               </NavLink>
@@ -124,6 +181,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* small screen navbar */}
       <div className="navbar-body-sm-screen">
         <div className="nav-top-sm-screen">
           <FontAwesomeIcon
@@ -131,9 +190,11 @@ const Navbar = () => {
             className="menu"
             onClick={() => setMenuOpen(true)}
           />
+
           <div className="logo-div" onClick={() => navigate("/")}>
             <img src="/src/assets/resources/logo.webp" />
           </div>
+
           <div className="cart">
             <div className="cart-icon-div">
               <FontAwesomeIcon className="cart-icon" icon={faShoppingBag} />
@@ -141,6 +202,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
         <div className="nav-bottom-mobile">
           <div className="search-div-sm-screen">
             <input type="text" placeholder="Search..." />
@@ -151,6 +213,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Small screen menu overlay */}
       <div
         className={`nav-overlay-sm-screen ${menuOpen ? "show-nav-overlay" : ""}`}
         onClick={() => setMenuOpen(false)}

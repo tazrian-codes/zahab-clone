@@ -5,7 +5,12 @@ import HomeCategory from "../HomeCategory/HomeCategory";
 const SweetType = () => {
   return (
     <div className="sweet">
-      <HomeCategory title='Sweet Type' subtitle='Sweet Collection' imageSrc="/src/assets/resources/sweet.webp" products={sweet_type} />
+      <HomeCategory
+        title="Sweet Type"
+        subtitle="Sweet Collection"
+        imageSrc="/src/assets/resources/sweet.webp"
+        products={sweet_type}
+      />
     </div>
   );
 };

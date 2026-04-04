@@ -35,13 +35,13 @@ const Pages = () => {
       <PageShift title={content[pageName]} />
 
       <div className="pages-body">
-      {pageName === "about" ? (
-        <About />
-      ) : pageName === "blog" ? (
-        <Blog />
-      ) : pageName === "account" ? (
-        <Account />
-      ) : null}
+        {pageName === "about" ? (
+          <About />
+        ) : pageName === "blog" ? (
+          <Blog />
+        ) : pageName === "account" ? (
+          <Account />
+        ) : null}
       </div>
       <Footer />
     </div>

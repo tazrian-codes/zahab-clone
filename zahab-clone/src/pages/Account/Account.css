@@ -1,44 +1,44 @@
-.account-page{
+.account-page {
   display: flex;
   padding: 50px 100px;
 }
 
-.account-page h4{
+.account-page h4 {
   color: black;
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 15px;
 }
 
-.account-page .login{
+.account-page .login {
   width: 100%;
 }
 
-.account-page .star{
+.account-page .star {
   color: red;
   margin-left: 5px;
 }
 
-.account-page p{
+.account-page p {
   color: rgb(147, 147, 147);
 }
 
-.account-page .lost-pass{
+.account-page .lost-pass {
   color: black;
   transition: 0.3s all;
   cursor: pointer;
 }
 
-.account-page .lost-pass:hover{
+.account-page .lost-pass:hover {
   color: #c5b826;
 }
 
-.account-page .login-div{
+.account-page .login-div {
   display: flex;
   gap: 5px;
 }
 
-.account-page button{
+.account-page button {
   padding: 5px 10px;
   border: 0;
   border-radius: 5px;
@@ -48,23 +48,23 @@
   cursor: pointer;
 }
 
-.account-page button:hover{
+.account-page button:hover {
   background-color: #b3a724;
 }
 
-.account-page .register-btn{
+.account-page .register-btn {
   margin-top: 10px;
   padding: 10px 20px;
 }
 
 @media (max-width: 1200px) {
-  .account-page{
+  .account-page {
     padding: 20px;
   }
 }
 
 @media (max-width: 735px) {
-  .account-page{
+  .account-page {
     flex-direction: column;
     gap: 50px;
   }

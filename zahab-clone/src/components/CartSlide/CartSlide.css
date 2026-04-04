@@ -1,4 +1,4 @@
-.cart-slide-overlay{
+.cart-slide-overlay {
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
@@ -9,7 +9,7 @@
   transition: 0.1s all;
 }
 
-.cart-slide{
+.cart-slide {
   height: 100vh;
   width: 30%;
   background-color: white;
@@ -17,47 +17,47 @@
   transition: 0.3s all;
 }
 
-.slide-top{
+.slide-top {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
 }
 
-.slide-top span{
+.slide-top span {
   font-weight: 500;
 }
 
-.cart-slide-overlay.overlay-show{
+.cart-slide-overlay.overlay-show {
   visibility: visible;
 }
 
-.cart-slide-overlay.overlay-hide{
+.cart-slide-overlay.overlay-hide {
   visibility: hidden;
 }
 
-.cart-slide.slide-show{
+.cart-slide.slide-show {
   transform: translateX(0);
   visibility: visible;
 }
 
-.cart-slide.slide-hide{
+.cart-slide.slide-hide {
   transform: translateX(100%);
   visibility: hidden;
 }
 
-.cart-slide-body{
+.cart-slide-body {
   overflow-y: auto;
   height: 75%;
   width: 100%;
 }
 
-.cart-slide-bottom{
+.cart-slide-bottom {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.cart-slide-bottom button{
+.cart-slide-bottom button {
   padding: 10px;
   border-radius: 5px;
   outline: none;
@@ -65,12 +65,32 @@
   font-weight: 500;
 }
 
-.cart-slide-bottom .view-cart{
+.cart-slide-bottom .view-cart {
   border: 1px solid silver;
+  cursor: pointer;
 }
 
-.cart-slide-bottom .checkout{
+.cart-slide-bottom .checkout {
   background-color: #c5aa30;
   border: 0;
   color: white;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.cart-slide-bottom .checkout:hover {
+  background-color: #b1992e;
+}
+
+.cart-slide-bottom-shopping {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c5aa30;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-slide-bottom-shopping span {
+  font-weight: 500;
 }

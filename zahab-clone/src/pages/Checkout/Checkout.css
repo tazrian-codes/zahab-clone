@@ -1,37 +1,37 @@
-.checkout-page{
+.checkout-page {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 100vh;
 }
 
-.checkout-page .left-div{
+.checkout-page .left-div {
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgb(217, 217, 217);
   padding: 20px 30px 20px 100px;
 }
 
-.left-div img{
+.left-div img {
   width: clamp(130px, 100%, 150px);
   cursor: pointer;
 }
 
-.left-div .coupon{
+.left-div .coupon {
   display: flex;
   gap: 5px;
   margin: 10px 0;
 }
 
-.left-div .coupon span{
+.left-div .coupon span {
   font-weight: 500;
 }
 
-.left-div .coupon span:nth-child(2){
+.left-div .coupon span:nth-child(2) {
   color: #c5b930;
   cursor: pointer;
 }
 
-.left-div .coupon-code-div{
+.left-div .coupon-code-div {
   border: 0;
   background-color: rgb(234, 234, 234);
   border-radius: 5px;
@@ -41,17 +41,17 @@
   transition: 0.3s all;
 }
 
-.coupon-code-div p{
+.coupon-code-div p {
   margin-bottom: 5px;
 }
 
-.coupon-code-div input{
+.coupon-code-div input {
   border: 1px solid rgb(217, 217, 217);
   padding: 5px;
   width: 50%;
 }
 
-.coupon-code-div button{
+.coupon-code-div button {
   border: 0;
   background-color: #c5a530;
   color: white;
@@ -59,24 +59,24 @@
   padding: 10px 20px;
 }
 
-.coupon-code-div.show-coupon-div{
+.coupon-code-div.show-coupon-div {
   max-height: 100px;
   padding: 10px;
   border: 1px solid rgb(217, 217, 217);
 }
 
-.left-div h4{
+.left-div h4 {
   color: black;
   font-weight: 500;
   font-size: 1.5rem;
   margin: 10px 0;
 }
 
-.left-div form label{
+.left-div form label {
   display: block;
 }
 
-.left-div form input{
+.left-div form input {
   margin: 0 0 10px;
   font-size: 0.8rem;
   padding: 5px;
@@ -84,19 +84,19 @@
   outline: none;
 }
 
-.left-div form .star{
+.left-div form .star {
   color: red;
 }
 
-.left-div form .country{
+.left-div form .country {
   margin: 10px 0;
 }
 
-.state-dropdown{
+.state-dropdown {
   margin: 0 0 10px;
 }
 
-.state-dropdown .box{
+.state-dropdown .box {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -105,82 +105,81 @@
   cursor: pointer;
 }
 
-.state-dropdown .dropdown{
+.state-dropdown .dropdown {
   overflow-y: auto;
   max-height: 150px;
   border: 1px solid rgb(217, 217, 217);
   background-color: white;
 }
 
-.dropdown .top{
+.dropdown .top {
   padding: 5px 5px 0;
   background-color: white;
 }
 
-
-.dropdown p{
+.dropdown p {
   padding: 5px;
   cursor: pointer;
 }
 
-.dropdown p:hover{
+.dropdown p:hover {
   background: rgb(57, 126, 195);
   color: white;
 }
 
-.left-div form .ship{
+.left-div form .ship {
   display: flex;
   align-items: center;
   gap: 10px;
   width: 100%;
 }
 
-.ship #checkBox{
+.ship #checkBox {
   width: fit-content;
 }
 
-.ship-info{
+.ship-info {
   overflow: hidden;
   max-height: 0;
   transition: 0.3s all;
 }
 
-.ship-info.show{
+.ship-info.show {
   max-height: 500px;
 }
 
-.ship-info.hide{
+.ship-info.hide {
   max-height: 0;
 }
 
-.notes-div{
+.notes-div {
   display: flex;
   flex-direction: column;
   gap: 5px;
   margin-top: 10px;
 }
 
-.notes-div textarea{
+.notes-div textarea {
   padding: 10px;
   min-width: 100%;
   min-height: 200px;
 }
 
-.right-div{
+.right-div {
   background-color: rgb(245, 245, 245);
   padding: 20px 100px 20px 30px;
 }
 
-.right-div h2{
+.right-div h2 {
   margin-bottom: 10px;
   font-weight: 500;
 }
 
-.right-div .items-div{
+.right-div .items-div {
   border: 1px solid rgb(217, 217, 217);
 }
 
-.right-div .items-div .top-div{
+.right-div .items-div .top-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -188,54 +187,56 @@
   border-bottom: 1px solid rgb(217, 217, 217);
 }
 
-.center-div{
+.center-div {
   padding: 0 20px;
 }
 
-.center-div .items{
+.center-div .items {
   border-bottom: 1px solid rgb(217, 217, 217);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.center-div .items .div-one img{
+.center-div .items .div-one img {
   width: 50px;
 }
 
-.center-div .items .div-one{
+.center-div .items .div-one {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 10px;
 }
 
-.div-one .quantity{
+.div-one .quantity {
   color: rgb(162, 162, 162);
 }
 
-.right-div .bottom-div{
+.right-div .bottom-div {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.right-div .bottom-div .subtotal, .right-div .bottom-div .shipping, .right-div .bottom-div .total{
+.right-div .bottom-div .subtotal,
+.right-div .bottom-div .shipping,
+.right-div .bottom-div .total {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.bottom-div .silver-text{
+.bottom-div .silver-text {
   color: silver;
 }
 
-.bottom-div .bold{
+.bottom-div .bold {
   font-weight: 500;
 }
 
-.right-div .payment-options{
+.right-div .payment-options {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -243,21 +244,21 @@
   padding: 10px;
 }
 
-.payment-options label{
+.payment-options label {
   border-bottom: 1px solid rgb(217, 217, 217);
   padding-bottom: 10px;
   cursor: pointer;
 }
 
-.payment-options input{
+.payment-options input {
   cursor: pointer;
 }
 
-.payment-options .nagad{
+.payment-options .nagad {
   border: 0;
 }
 
-.payment-div button{
+.payment-div button {
   width: 100%;
   border: 0;
   background-color: #c5a530;
@@ -268,24 +269,25 @@
   transition: 0.3s all;
 }
 
-.payment-div button:hover{
+.payment-div button:hover {
   background-color: #b5982e;
 }
 
 @media (max-width: 735px) {
-  .checkout-page{
+  .checkout-page {
     display: flex;
     flex-direction: column;
   }
 
-  .checkout-page .left-div, .checkout-page .right-div{
+  .checkout-page .left-div,
+  .checkout-page .right-div {
     padding: 30px 20px;
   }
 }
 
 @media (max-width: 1200px) {
-
-  .checkout-page .left-div, .checkout-page .right-div{
+  .checkout-page .left-div,
+  .checkout-page .right-div {
     padding: 30px 20px;
   }
 }

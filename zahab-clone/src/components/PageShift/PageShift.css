@@ -1,4 +1,4 @@
-.page-shift .heading{
+.page-shift .heading {
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -10,19 +10,20 @@
   background-color: white;
 }
 
-.page-shift .heading .heading-center{
+.page-shift .heading .heading-center {
   font-size: 18px;
 }
 
-.page-shift .heading .heading-left, .page-shift .heading .heading-right{
+.page-shift .heading .heading-left,
+.page-shift .heading .heading-right {
   font-size: 23px;
 }
 
-.page-shift .heading .heading-right{
+.page-shift .heading .heading-right {
   position: relative;
 }
 
-.page-shift .heading-right .cart-circle{
+.page-shift .heading-right .cart-circle {
   position: absolute;
   background: #c59b30;
   height: 15px;
@@ -32,7 +33,7 @@
   top: 3px;
 }
 
-.page-shift .top{
+.page-shift .top {
   display: flex;
   padding: 170px 100px 20px;
   margin-bottom: 10px;
@@ -41,45 +42,43 @@
   color: black;
 }
 
-.page-shift .top-left{
+.page-shift .top-left {
   display: flex;
   gap: 3px;
 }
 
-.page-shift .div-1{
+.page-shift .div-1 {
   display: flex;
   gap: 3px;
 }
 
-.page-shift .div-1 .home-btn{
+.page-shift .div-1 .home-btn {
   text-decoration: none;
   color: #c59b30;
 }
 
-.page-shift .previous-page-btn{
+.page-shift .previous-page-btn {
   cursor: pointer;
 }
 
-.page-shift .top-right{
+.page-shift .top-right {
   transition: color 0.3s;
 }
 
-.page-shift .top-right:hover{
+.page-shift .top-right:hover {
   color: #c59b30;
 }
 
-
 @media (max-width: 1200px) {
-
-  .page-shift .top{
+  .page-shift .top {
     padding: 80px 10px 20px;
   }
 
-  .page-shift .heading{
+  .page-shift .heading {
     display: flex;
   }
 
-  .page-shift .nav{
+  .page-shift .nav {
     display: none;
   }
 }

@@ -1,14 +1,14 @@
-.pages{
+.pages {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-.pages-body{
+.pages-body {
   flex: 1;
 }
 
-.pages .heading{
+.pages .heading {
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -20,19 +20,20 @@
   background-color: white;
 }
 
-.pages .heading .heading-center{
+.pages .heading .heading-center {
   font-size: 18px;
 }
 
-.pages .heading .heading-left, .pages .heading .heading-right{
+.pages .heading .heading-left,
+.pages .heading .heading-right {
   font-size: 23px;
 }
 
-.pages .heading .heading-right{
+.pages .heading .heading-right {
   position: relative;
 }
 
-.pages .heading-right .cart-circle{
+.pages .heading-right .cart-circle {
   position: absolute;
   background: #c59b30;
   height: 15px;
@@ -42,7 +43,7 @@
   top: 3px;
 }
 
-.top{
+.top {
   display: flex;
   padding: 170px 100px 20px;
   margin-bottom: 10px;
@@ -51,46 +52,44 @@
   color: black;
 }
 
-.top-left{
+.top-left {
   display: flex;
   gap: 3px;
 }
 
-.div-1{
+.div-1 {
   display: flex;
   gap: 3px;
 }
 
-.div-1 .home-btn{
+.div-1 .home-btn {
   text-decoration: none;
   color: #c59b30;
 }
 
-.home-btn-two{
+.home-btn-two {
   text-decoration: none;
   color: black;
 }
 
-.top-right{
+.top-right {
   transition: color 0.3s;
 }
 
-.top-right:hover{
+.top-right:hover {
   color: #c59b30;
 }
 
-
 @media (max-width: 1200px) {
-
-  .pages .top{
+  .pages .top {
     padding: 80px 10px 20px;
   }
 
-  .pages .heading{
+  .pages .heading {
     display: flex;
   }
 
-  .pages .nav{
+  .pages .nav {
     display: none;
   }
 }

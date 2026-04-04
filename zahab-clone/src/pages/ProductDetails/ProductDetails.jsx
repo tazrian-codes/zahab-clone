@@ -18,10 +18,24 @@ import {
 import { StoreContext } from "../../Context/Context";
 
 const ProductDetails = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [selectedSize, setSelectedSize] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
+  const [quantity, setQuantity] = useState(1); // track desired quantity before add to cart
+  const { addToCart } = useContext(StoreContext);
+
+  const increaseQty = () => setQuantity((prev) => prev + 1);
+  const decreaseQty = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
+  const handleAddToCart = () => {
+    if (selectedSize) {
+      for (let i = 0; i < quantity; i++) {
+        addToCart(product.id, selectedSize);
+      }
+      navigate(`/product/${product.id}`);
+    }
+  };
 
   const { id } = useParams();
   const allProducts = [...sweet_type, ...traditional_type, ...product_list];
@@ -30,8 +44,6 @@ const ProductDetails = () => {
   if (!product) {
     return <div>Product not found</div>;
   }
-
-  const { addToCart, cartItems } = useContext(StoreContext);
   return (
     <div className="product-details">
       <div className="product-details-top">
@@ -141,19 +153,24 @@ const ProductDetails = () => {
           </span>
           <div className="cart-div">
             <div className="count-div">
-              <span>-</span>
-              <span>1</span>
-              <span>+</span>
+              <span onClick={decreaseQty}>-</span>
+              <span>{quantity}</span>
+              <span onClick={increaseQty}>+</span>
             </div>
 
+            {/* Add to Cart button: adds first time */}
             <button
               className="add-to-cart-btn"
               disabled={selectedSize === null}
-              onClick={() => addToCart(product.id, selectedSize)}
+              onClick={handleAddToCart}
             >
               Add to Cart
             </button>
-            <button className="buy-now-btn" disabled={selectedSize === null} onClick={() => navigate('/checkout')}>
+            <button
+              className="buy-now-btn"
+              disabled={selectedSize === null}
+              onClick={() => navigate("/checkout")}
+            >
               Buy Now
             </button>
           </div>

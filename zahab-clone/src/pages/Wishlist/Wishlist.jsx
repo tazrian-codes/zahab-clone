@@ -2,7 +2,7 @@ import React from "react";
 import WishlistProductCard from "../../components/WishlistProductCard/WishlistProductCard";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import './Wishlist.css'
+import "./Wishlist.css";
 
 const Wishlist = () => {
   return (

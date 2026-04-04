@@ -1,39 +1,48 @@
 import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrosoft } from "@fortawesome/free-brands-svg-icons";
-import { faAngleDown, faAnglesDown, faAnglesUp, faAngleUp, faList } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faAngleUp,
+  faList,
+} from "@fortawesome/free-solid-svg-icons";
 import "./ProductSection.css";
-import { product_list } from "../../assets/resources/assets";
-import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 import { StoreContext } from "../../Context/Context";
 import ProductGlimpse from "../ProductGlimpse/ProductGlimpse";
 
+// Component to show a section of products with sorting, grid/list view, and quick view
 const ProductSection = ({ title, products }) => {
-  const { selectedProduct, setSelectedProduct } = useContext(StoreContext);
-  const [view, setView] = useState("grid");
-  const [sortType, setSortType] = useState("Sort by default");
-  const [sortOpen, setSortOpen] = useState(false);
+  const { selectedProduct, setSelectedProduct } = useContext(StoreContext); // global state for quick view
+  const [view, setView] = useState("grid"); // track current view: grid or list
+  const [sortType, setSortType] = useState("Sort by default"); // current sorting option
+  const [sortOpen, setSortOpen] = useState(false); // dropdown visibility
 
+  // Sort products based on current sortType
   const sortedProducts = [...products].sort((a, b) => {
-    if (sortType === "Sort by low to high") {
-      return a.price_one - b.price_one;
+    switch (sortType) {
+      case "Sort by low to high":
+      case "low": // mobile version
+        return a.price_one - b.price_one;
+      case "Sort by high to low":
+      case "high":
+        return b.price_one - a.price_one;
+      case "Sort by a to z":
+      case "az":
+        return a.name.localeCompare(b.name);
+      default:
+        return 0; // default, no sorting
     }
-
-    if (sortType === "Sort by high to low") {
-      return b.price_one - a.price_one;
-    }
-
-    if (sortType === "Sort by a to z") {
-      return a.name.localeCompare(b.name);
-    }
-
-    return 0;
   });
+
   return (
     <div className="product-section-page">
+      {/* Top section with title, view toggle, and sort options */}
       <div className="product-section-page-top">
         <div className="product-section-page-top-left">
           <h2>{title}</h2>
+
+          {/* Grid/List view icons */}
           <div className="product-section-page-top-grid">
             <FontAwesomeIcon
               icon={faMicrosoft}
@@ -47,36 +56,47 @@ const ProductSection = ({ title, products }) => {
             />
           </div>
         </div>
+
+        {/* Sort dropdown */}
         <div className="product-section-page-top-right">
           <div className="sort-show">
             <span>Sort by:</span>
-            <div className="box" onClick={() => setSortOpen(true)}>
+            <div className="box" onClick={() => setSortOpen(!sortOpen)}>
               <span>{sortType}</span>
               <FontAwesomeIcon icon={sortOpen ? faAngleUp : faAngleDown} />
             </div>
           </div>
-          
 
-          <div className={`sort-options ${sortOpen ? 'sort-display' : ''}`}>
-            <span onClick={() => {setSortType("Sort by default"); setSortOpen(false)}}>Sort by default</span>
-
+          <div className={`sort-options ${sortOpen ? "sort-display" : ""}`}>
             <span
-              className={sortType === "Sort by low to high" ? "active" : ""}
-              onClick={() => {setSortType("Sort by low to high"); setSortOpen(false)}}
+              onClick={() => {
+                setSortType("Sort by default");
+                setSortOpen(false);
+              }}
+            >
+              Sort by default
+            </span>
+            <span
+              onClick={() => {
+                setSortType("Sort by low to high");
+                setSortOpen(false);
+              }}
             >
               Sort by low to high
             </span>
-
             <span
-              className={sortType === "Sort by high to low" ? "active" : ""}
-              onClick={() => {setSortType("Sort by high to low"); setSortOpen(false)}}
+              onClick={() => {
+                setSortType("Sort by high to low");
+                setSortOpen(false);
+              }}
             >
               Sort by high to low
             </span>
-
             <span
-              className={sortType === "Sort by a to z" ? "active" : ""}
-              onClick={() => {setSortType("Sort by a to z"); setSortOpen(false)}}
+              onClick={() => {
+                setSortType("Sort by a to z");
+                setSortOpen(false);
+              }}
             >
               Sort by a to z
             </span>
@@ -84,42 +104,54 @@ const ProductSection = ({ title, products }) => {
         </div>
       </div>
 
+      {/* Small screen layout */}
       <div className="product-section-page-top-sm-screen">
         <div className="top-row-one">
           <h2 className="top-row-one-left">{title}</h2>
-          <div className="top-row-one-right">
+          <div className="top-row-one-right sort-show">
             <span>Sort by:</span>
-            <div className="product-section-page-top-right">
-              <span>Sort by:</span>
-
-              <div className="sort-options">
-                <span onClick={() => setSortType("")}>Default</span>
-
-                <span
-                  className={sortType === "low" ? "active" : ""}
-                  onClick={() => setSortType("low")}
-                >
-                  Low → High
-                </span>
-
-                <span
-                  className={sortType === "high" ? "active" : ""}
-                  onClick={() => setSortType("high")}
-                >
-                  High → Low
-                </span>
-
-                <span
-                  className={sortType === "az" ? "active" : ""}
-                  onClick={() => setSortType("az")}
-                >
-                  A → Z
-                </span>
-              </div>
+            <div className="box" onClick={() => setSortOpen(!sortOpen)}>
+              <span>{sortType}</span>
+              <FontAwesomeIcon icon={sortOpen ? faAngleUp : faAngleDown} />
             </div>
           </div>
+          <div className={`sort-options ${sortOpen ? "sort-display" : ""}`}>
+            <span
+              onClick={() => {
+                setSortType("Sort by default");
+                setSortOpen(false);
+              }}
+            >
+              Sort by default
+            </span>
+            <span
+              onClick={() => {
+                setSortType("Sort by low to high");
+                setSortOpen(false);
+              }}
+            >
+              Sort by low to high
+            </span>
+            <span
+              onClick={() => {
+                setSortType("Sort by high to low");
+                setSortOpen(false);
+              }}
+            >
+              Sort by high to low
+            </span>
+            <span
+              onClick={() => {
+                setSortType("Sort by a to z");
+                setSortOpen(false);
+              }}
+            >
+              Sort by a to z
+            </span>
+          </div>
         </div>
-        <div className="line"></div>
+
+        {/* Small screen grid/list toggle */}
         <div className="top-row-two">
           <FontAwesomeIcon
             icon={faMicrosoft}
@@ -133,34 +165,42 @@ const ProductSection = ({ title, products }) => {
           />
         </div>
       </div>
+
       <div className="line"></div>
+
+      {/* Desktop product cards */}
       <div className={`product-card ${view === "list" ? "product-list" : ""}`}>
-        {sortedProducts.map((product, index) => {
-          return (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onQuickView={setSelectedProduct}
-            />
-          );
-        })}
+        {sortedProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onQuickView={setSelectedProduct} // quick view modal
+          />
+        ))}
       </div>
 
+      {/* Small screen product cards */}
       <div
         className={`product-card-sm-screen ${view === "list" ? "product-list-sm-screen" : ""}`}
       >
-        {sortedProducts.map((product, index) => {
-          return <ProductCard key={product.id} product={product} />;
-        })}
+        {sortedProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onQuickView={setSelectedProduct}
+          />
+        ))}
       </div>
+
+      {/* Quick view overlay */}
       {selectedProduct && (
         <div
           className="product-glimpse-overlay"
           onClick={() => setSelectedProduct(null)}
         >
           <ProductGlimpse
-            className="product-glimpse-component"
             product={selectedProduct}
+            setSelectedProduct={setSelectedProduct} // pass setter to allow closing
           />
         </div>
       )}

@@ -1,9 +1,9 @@
-import React from 'react'
-import './Banner.css'
+import React from "react";
+import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div className='banner'>
+    <div className="banner">
       <div className="big-banner">
         <img src="/src/assets/resources/banner2.webp" alt="" />
       </div>
@@ -12,7 +12,7 @@ const Banner = () => {
         <img src="/src/assets/resources/banner4.webp" alt="" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

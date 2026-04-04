@@ -1,33 +1,33 @@
-.blog{
+.blog {
   display: grid;
   grid-template-columns: 4fr 1fr;
   padding: 20px 100px;
 }
 
-.blog-body-right{
+.blog-body-right {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-.blog-body-right .search-div{
+.blog-body-right .search-div {
   display: flex;
   justify-content: center;
   position: relative;
 }
 
-.blog-body-right .search-div input{
+.blog-body-right .search-div input {
   padding: 10px;
   border: 1px solid rgb(225, 225, 225);
 }
 
-.blog-body-right .search-div .search-icon{
+.blog-body-right .search-div .search-icon {
   position: absolute;
   right: 30px;
   top: 30px;
 }
 
-.blog-body-right h4{
+.blog-body-right h4 {
   display: inline-block;
   color: black;
   font-size: 20px;
@@ -36,19 +36,19 @@
   padding-bottom: 10px;
 }
 
-.blog-body-right .border-div{
+.blog-body-right .border-div {
   border: 1px solid rgb(225, 225, 225);
   padding: 20px;
 }
 
-.blog-body-right .line{
+.blog-body-right .line {
   height: 1px;
   width: 100%;
   background-color: rgb(225, 225, 225);
   margin-bottom: 10px;
 }
 
-.recent-posts-body{
+.recent-posts-body {
   display: flex;
   flex-direction: column;
   gap: 10px;
