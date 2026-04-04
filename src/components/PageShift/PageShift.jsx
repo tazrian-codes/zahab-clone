@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./PageShift.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,9 +8,11 @@ import {
   faShoppingBag,
 } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../Navbar/Navbar";
+import { StoreContext } from "../../Context/Context";
 
 const PageShift = ({ title }) => {
   const navigate = useNavigate();
+  const {totalQuantity} = useContext(StoreContext);
 
   return (
     <div className="page-shift">
@@ -30,10 +32,15 @@ const PageShift = ({ title }) => {
           <span>{title}</span>
         </div>
 
-        <div className="heading-right">
-          <FontAwesomeIcon icon={faShoppingBag} />
-          <div className="cart-circle"></div>
-        </div>
+        <div className="heading-right cart" onClick={() => setCartOpen(true)}>
+                      <div className="cart-icon-div">
+                        <FontAwesomeIcon className="nav-icons" icon={faShoppingBag} />
+                        <div className="cart-count">
+                          <span>{totalQuantity}</span>
+                        </div>
+                      </div>
+                      
+                    </div>
       </div>
 
       {/* Breadcrumb + navigation helper */}

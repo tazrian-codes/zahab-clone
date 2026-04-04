@@ -193,7 +193,7 @@ const Navbar = () => {
           />
 
           <div className="logo-div" onClick={() => navigate("/")}>
-            <img src="/src/assets/resources/logo.webp" />
+            <img src={logo} />
           </div>
 
           <div className="cart" onClick={() => setCartOpen(true)}>
