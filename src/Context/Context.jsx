@@ -66,6 +66,15 @@ const StoreContextProvider = ({ children }) => {
     });
   };
 
+  // Remove wishlist items
+  const removeAtOnceWishlist = (id) => {
+    setWishlistItems((prev) => {
+      const updated = { ...prev };
+      delete updated[id];
+      return updated;
+    });
+  };
+
   // Remove all quantity of a product from cart at once
   const removeAtOnce = (id, size) => {
     const key = getKey(id, size);
@@ -145,6 +154,7 @@ const StoreContextProvider = ({ children }) => {
         selectedProduct,
         setSelectedProduct,
         totalPrice,
+        removeAtOnceWishlist
       }}
     >
       {children}

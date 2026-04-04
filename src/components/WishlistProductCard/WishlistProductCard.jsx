@@ -10,7 +10,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import "./WishlistProductCard.css";
 
 const WishlistProductCard = () => {
-  const { wishlistItems } = useContext(StoreContext);
+  const { wishlistItems, removeAtOnce, removeAtOnceWishlist } = useContext(StoreContext);
   const allProducts = [...sweet_type, ...traditional_type, ...product_list];
   const hasProducts = Object.keys(wishlistItems).length > 0;
   return (
@@ -36,7 +36,7 @@ const WishlistProductCard = () => {
                   </div>
                 </div>
                 <button className="opts-btn">Select options</button>
-                <FontAwesomeIcon icon={faTrashCan} className="icon" />
+                <FontAwesomeIcon icon={faTrashCan} className="icon" onClick={() => removeAtOnceWishlist(id)} />
               </div>
             );
           })}

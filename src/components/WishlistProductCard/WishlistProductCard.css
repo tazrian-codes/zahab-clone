@@ -45,10 +45,11 @@
 .wishlist-product-card .icon {
   font-size: 1.3rem;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .empty-wishlist {
-  margin: 300px auto 0;
+  margin: 100px auto;
   width: 100%;
   display: flex;
   justify-content: center;
