@@ -225,8 +225,7 @@
   position: relative;
 }
 
-.nav-top-sm-screen .menu,
-.nav-top-sm-screen .cart-icon {
+.nav-top-sm-screen .nav-icons{
   font-size: 25px;
 }
 

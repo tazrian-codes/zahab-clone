@@ -19,7 +19,7 @@
 }
 
 .wishlist-product-card .img-div img {
-  width: clamp(150px, 100%, 260px);
+  width: clamp(120px, 100%, 260px);
 }
 
 .wishlist-product-card .product-info {
@@ -56,9 +56,7 @@
 }
 
 @media (max-width: 1200px) {
-  .wishlist-product {
-    padding: 80px 20px 30px;
-  }
+  
 }
 
 @media (min-width: 551px) and (max-width: 735px) {

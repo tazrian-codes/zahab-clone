@@ -40,7 +40,7 @@ const PageShift = ({ title }) => {
       <div className="top">
         <div className="top-left">
           <div className="div-1">
-            <NavLink to="/home" className="home-btn">
+            <NavLink to="/" className="home-btn">
               Home
             </NavLink>
             <span>/</span>

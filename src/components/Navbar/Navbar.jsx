@@ -188,7 +188,7 @@ const Navbar = () => {
         <div className="nav-top-sm-screen">
           <FontAwesomeIcon
             icon={faBars}
-            className="menu"
+            className="menu nav-icons"
             onClick={() => setMenuOpen(true)}
           />
 
@@ -196,12 +196,14 @@ const Navbar = () => {
             <img src="/src/assets/resources/logo.webp" />
           </div>
 
-          <div className="cart">
-            <div className="cart-icon-div">
-              <FontAwesomeIcon className="cart-icon" icon={faShoppingBag} />
-              <div className="cart-count">{totalQuantity}</div>
+          <div className="cart" onClick={() => setCartOpen(true)}>
+              <div className="cart-icon-div">
+                <FontAwesomeIcon className="nav-icons" icon={faShoppingBag} />
+                <div className="cart-count">
+                  <span>{totalQuantity}</span>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
 
         <div className="nav-bottom-mobile">

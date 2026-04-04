@@ -23,6 +23,10 @@
   font-size: 20px;
 }
 
+.slide-top .slide-remove {
+  cursor: pointer;
+}
+
 .slide-top span {
   font-weight: 500;
 }
@@ -93,4 +97,24 @@
 
 .cart-slide-bottom-shopping span {
   font-weight: 500;
+}
+
+@media (max-width: 550px) {
+  .cart-slide {
+    width: 90%;
+  }
+
+  .cart-slide-body {
+    height: 70%;
+  }
+
+  .cart-slide-bottom-shopping {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 551px) and (max-width: 1000px) {
+  .cart-slide {
+    width: 70%;
+  }
 }

@@ -22,7 +22,9 @@ const CartSlide = ({ cartOpen, setCartOpen }) => {
       >
         <div className="slide-top">
           <span>Shopping Cart</span>
-          <span onClick={() => setCartOpen(false)}>x</span>
+          <span className="slide-remove" onClick={() => setCartOpen(false)}>
+            x
+          </span>
         </div>
         {/* divider */}
         <div className="line"></div>

@@ -16,7 +16,7 @@
 }
 
 .cart-list .img-div img {
-  width: 90px;
+  width: 70px;
   aspect-ratio: 1/1;
   object-fit: cover;
   cursor: pointer;
@@ -74,4 +74,22 @@
   font-size: 2rem;
   width: 100%;
   margin: 100px auto;
+}
+
+@media (max-width: 1200px) {
+  .cart-empty {
+    font-size: 1rem;
+  }
+
+  .cart-content .info-div {
+    justify-content: center;
+  }
+
+  .cart-content .info-div .info-top span {
+    font-size: 1rem;
+  }
+
+  .info-bottom .counter-div {
+    font-size: 1rem;
+  }
 }
