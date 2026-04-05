@@ -48,7 +48,10 @@ const CartSlide = ({ cartOpen, setCartOpen }) => {
         ) : (
           <div
             className="cart-slide-bottom-shopping"
-            onClick={() => navigate("/shop")}
+            onClick={() => {
+              navigate("/shop");
+              setCartOpen(false);
+            }}
           >
             <span>Continue Shopping</span>
             <FontAwesomeIcon icon={faAngleRight} />

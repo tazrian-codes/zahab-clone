@@ -35,6 +35,7 @@
   overflow: hidden;
   width: clamp(150px, 100%, 400px);
   height: auto;
+  cursor: pointer;
 }
 
 .product-card .opt-div-contents .main-price {

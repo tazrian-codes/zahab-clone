@@ -19,11 +19,10 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   // Global cart & wishlist data
-  const { totalQuantity, totalWishlistItems, totalPrice } =
+  const { totalQuantity, totalWishlistItems, totalPrice, cartOpen, setCartOpen } =
     useContext(StoreContext);
 
   // UI state controls
-  const [cartOpen, setCartOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 

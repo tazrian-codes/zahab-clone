@@ -16,6 +16,7 @@ import {
   product_list,
 } from "../../assets/resources/assets";
 import { StoreContext } from "../../Context/Context";
+import CartSlide from "../../components/CartSlide/CartSlide";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const ProductDetails = () => {
   const [showDescription, setShowDescription] = useState(false);
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
   const [quantity, setQuantity] = useState(1); // track desired quantity before add to cart
-  const { addToCart } = useContext(StoreContext);
+  const { addToCart, totalQuantity, cartOpen, setCartOpen } = useContext(StoreContext);
 
   const increaseQty = () => setQuantity((prev) => prev + 1);
   const decreaseQty = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
@@ -46,12 +47,13 @@ const ProductDetails = () => {
   }
   return (
     <div className="product-details">
+      <CartSlide cartOpen={cartOpen} setCartOpen={setCartOpen} />
       <div className="product-details-top">
         <div className="nav">
           <Navbar />
         </div>
         <div className="heading">
-          <div className="heading-left">
+          <div className="heading-left" onClick={() => navigate('/')}>
             <FontAwesomeIcon icon={faAngleLeft} />
             <FontAwesomeIcon icon={faHome} />
           </div>
@@ -60,15 +62,19 @@ const ProductDetails = () => {
             <span>{product.name}</span>
           </div>
 
-          <div className="heading-right">
-            <FontAwesomeIcon icon={faShoppingBag} />
-            <div className="cart-circle"></div>
+          <div className="heading-right cart" onClick={() => setCartOpen(true)}>
+            <div className="cart-icon-div">
+              <FontAwesomeIcon className="nav-icons" icon={faShoppingBag} />
+              <div className="cart-count">
+                <span>{totalQuantity}</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="top">
           <div className="top-left">
             <div className="div-1">
-              <NavLink to="/home" className="home-btn">
+              <NavLink to="/" className="home-btn">
                 Home
               </NavLink>
               <span>/</span>

@@ -136,6 +136,9 @@ const StoreContextProvider = ({ children }) => {
   // State for selected product in quick view
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+  // State for cart slide
+  const [cartOpen, setCartOpen] = useState(false);
+
   return (
     <StoreContext.Provider
       value={{
@@ -154,7 +157,9 @@ const StoreContextProvider = ({ children }) => {
         selectedProduct,
         setSelectedProduct,
         totalPrice,
-        removeAtOnceWishlist
+        removeAtOnceWishlist,
+        cartOpen,
+        setCartOpen
       }}
     >
       {children}

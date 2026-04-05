@@ -133,6 +133,12 @@
 
 .product-list .col .opt-div-contents .opt-div-show-product {
   display: block;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.product-list .col .opt-div-contents .opt-div-show-product:hover {
+  color: #c59b30;
 }
 
 .product-list .col .text {
@@ -194,6 +200,7 @@
   overflow: hidden;
   width: clamp(300px, 100%, 300px);
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .product-list .col .img-div img {
@@ -237,7 +244,11 @@
     margin-bottom: 10px;
   }
 
-  .product-list .col .others-div .opt-div-show-product {
+  .product-section-page .product-card-sm-screen .col .img-div .show-product{
+    display: none;
+  }
+
+  .product-list .col .others-div .opt-div-contents .opt-div-show-product {
     display: none;
   }
 

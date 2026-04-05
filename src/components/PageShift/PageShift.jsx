@@ -9,13 +9,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../Navbar/Navbar";
 import { StoreContext } from "../../Context/Context";
+import CartSlide from "../CartSlide/CartSlide";
 
 const PageShift = ({ title }) => {
   const navigate = useNavigate();
-  const {totalQuantity} = useContext(StoreContext);
+  const { totalQuantity, cartOpen, setCartOpen } = useContext(StoreContext);
 
   return (
     <div className="page-shift">
+      <CartSlide cartOpen={cartOpen} setCartOpen={setCartOpen} />
       {/* Reusable navbar */}
       <div className="nav">
         <Navbar />
@@ -33,14 +35,13 @@ const PageShift = ({ title }) => {
         </div>
 
         <div className="heading-right cart" onClick={() => setCartOpen(true)}>
-                      <div className="cart-icon-div">
-                        <FontAwesomeIcon className="nav-icons" icon={faShoppingBag} />
-                        <div className="cart-count">
-                          <span>{totalQuantity}</span>
-                        </div>
-                      </div>
-                      
-                    </div>
+          <div className="cart-icon-div">
+            <FontAwesomeIcon className="nav-icons" icon={faShoppingBag} />
+            <div className="cart-count">
+              <span>{totalQuantity}</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Breadcrumb + navigation helper */}
